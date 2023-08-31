@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <script src="https://kit.fontawesome.com/db6eb46503.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        #d{height: 300px;width: 300px;margin-top: 20px;margin-left: 30px;}
+        #a{height: 400px;width: 800px;margin-top: 50px;margin-left: 50px;}
+        #b{height: 300px;width: 300px;margin-top: 50px;margin-left: 10px;}
+        #c{height: 100px;width: 100px;margin-top: -400px;margin-left: 1200px;}
+        #e{height: 100px;width: 250px;margin-left: 1200px;margin-top: 19px;}
+    </style>
+</head>
+<body>
+
+
+
+<CENTER><h1>WELCOME TO SBT USER</h1></CENTER>
+    <div id="a">
+<div id="d">
+<center><h1 STYLE="color:red">Personal details</h1></center>
+            <p><b>Firstname</b> : {{a.firstname}}</p>
+            <p><b>Lastname</b> : {{a.lastname}} </p>
+            <p><b>Number</b> : {{a.number}}</p>
+    <a href="http://127.0.0.1:8000/bankapp/edit/{{a.id}}"><button type="submit" class="btn btn-outline-danger">EDIT YOUR PERSONAL DETAILS</button></a>
+</div>
+    </div>
+
+
+    <div id="c">
+ <img src="{% static img %}" height="100px" width="100px"><a href="http://127.0.0.1:8000/bankapp/imageedit/{{a.id}}"><i class="fa-solid fa-image"></i></a><br><br></div>
+
+    <div id="e">
+<p><b>Username</b> : {{a.username}} </p>
+ <p><b>Acc No</b>: {{a.accountnumber}}</p>
+        <div id="b">
+             <a href="http://127.0.0.1:8000/bankapp/addmoney/{{a.id}}"><button type="submit" class="btn btn-outline-danger">ADD MONEY</button></a><br><br>
+            <a href="http://127.0.0.1:8000/bankapp/widrawmoney/{{a.id}}"><button type="submit" class="btn btn-outline-danger">WITHDRAW MONEY</button></a><br><br>
+        <a href="http://127.0.0.1:8000/bankapp/checkbalance/{{a.id}}"><button type="submit" class="btn btn-outline-danger">CHECK BALANCE</button></a><br><br>
+        <a href="http://127.0.0.1:8000/bankapp/statement/{{a.id}}"><button type="submit" class="btn btn-outline-danger">MINISTATEMENT</button></a><br><br>
+            <a href="http://127.0.0.1:8000/bankapp/display/"><button type="submit" class="btn btn-outline-danger">NEWSFEED</button></a><br><br>
+             <a href="http://127.0.0.1:8000/bankapp/moneytransfer/"><button type="submit" class="btn btn-outline-danger">moneytransferhtml</button></a><br><br>
+             <a href="http://127.0.0.1:8000/bankapp/logoutt/"><button type="submit" class="btn btn-outline-danger">logout</button></a><br><br>
+
+        </div>
+
+    </div>
+</body>
+</html>

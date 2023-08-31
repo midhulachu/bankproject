@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <script src="https://kit.fontawesome.com/db6eb46503.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        tr{text-align:center;}
+        th{background-color: black;color: white;font-size: 20px;}
+        tr:nth-child(odd){background-color: gray;}
+        tr:nth-child(even){background-color: white;}
+        #a{height: 300px;width: 300px;margin-top: 100px;margin-left:150px}
+        th:hover{background-color: turquoise;}
+        body{background-image: linear-gradient(rgb(134, 114, 114), rgb(88, 9, 168));background-repeat: no-repeat;height: 750px;}
+
+    </style>
+            <script>
+        function myfunction(){
+        var body=document.getElementById('body').innerHTML;
+        var data=document.getElementById('data').innerHTML;
+        document.getElementById('body').innerHTML=data;
+        window.print()
+        }
+    </script>
+</head>
+
+<body id="body">
+
+    <div id="data">
+    <table id="a" border="1" >
+        <tr>
+
+            <th>Amount</th>
+            <th>Date</th>
+
+        </tr>
+            {% for i in x %}
+    {% if i.uid == id %}
+        <tr>
+            <td>{{i.amount}}</td>
+            <td>{{i.date}}</td>
+        </tr>
+
+    {% endif %}
+{% endfor %}
+
+    </table>
+        </div>
+
+</body>
+
+</html>
+
+<button type="button" class="btn btn-dark" onclick="myfunction()">Print the deposit</button>
